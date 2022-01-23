@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <ol>
+            <li v-for="(elem, index) in news">
+                <a class="app__link" v-bind:href="elem.url" v-bind:id="index">{{elem.text}}</a>
+                <button class="app__btn" v-bind:id='index' onclick="deleteEvent()">X</button>
+            </li>
+        </ol>
+    </div>
+
+    <form id="news" action="#">
+        <input type="text" id="text" placeholder="Краткое описание новости">
+        <input type="text" id="url" placeholder="URL новости">
+        <button type="submit" onclick="addNews()">Добавить</button>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
